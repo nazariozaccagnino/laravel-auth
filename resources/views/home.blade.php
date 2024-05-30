@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <section class="container">
-        <h1>Section title</h1>
-        <p>section content</p>
+    <section class="container text-center">
+        <h1>My projects landing page</h1>
+        <p>Here i'll publish all of my projects</p>
     </section>
 @endsection

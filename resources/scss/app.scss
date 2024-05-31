@@ -8,7 +8,49 @@ $fa-font-path: "../fonts/webfonts" !default;
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
 @import '~bootstrap/scss/bootstrap';
-
+.debug{
+    border: 1px solid red;
+}
 h1 {
     color: $text-color;
+}
+
+#admin{
+    height: 100vh;
+    overflow: hidden;
+    display:flex;
+}
+header{
+    height: 50px;
+    background-color: aquamarine;
+}
+#wrapper{
+    flex-grow: 1;
+}
+#sidebar{
+    padding: 10px;
+    width: 200px;
+    background-color: #4A6FDC;
+    color: white;
+    ul{
+        padding-left: 0px;
+        margin-top: 20px;
+    }
+    ul li{
+        padding: 10px;
+    }
+    .logo{
+        height: 50px;
+        border-bottom: 1px solid white;
+    }
+    .logo img{
+        width: 30px;
+    }
+    a{
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.451);
+    }
+    a:hover{
+        color: white;
+    }
 }

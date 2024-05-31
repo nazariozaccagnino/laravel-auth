@@ -40,7 +40,7 @@
     </tbody>
   </table>
       <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-warning">Add new project</button>
+      <a href="{{route('admin.projects.create', $project->slug)}}"><button type="button" class="btn btn-warning">Add new project</button></a>
       </div>
     </div>
 </section>

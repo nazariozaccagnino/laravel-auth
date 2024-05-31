@@ -9,7 +9,7 @@
                 <a href="{{route('admin.dashboard')}}">Dashboard</a>
             </li>
             <li>
-                <a href="{{route('admin.projects.index')}}">Posts</a>
+                <a href="{{route('admin.projects.index')}}">Projects</a>
             </li>
         </ul>
     </div>

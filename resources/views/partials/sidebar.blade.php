@@ -1,7 +1,7 @@
 <div id="sidebar">
-    <div class="logo">
+    <div class="logo d-flex align-items-center">
         <img src="https://www.svgrepo.com/show/314838/dashboard.svg" alt="logo">
-        <span class="fs-4">Admin</span>
+        <span class="fs-4">Control panel</span>
     </div>
     <div class="d-flex">
         <ul>

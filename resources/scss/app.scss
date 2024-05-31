@@ -8,49 +8,85 @@ $fa-font-path: "../fonts/webfonts" !default;
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
 @import '~bootstrap/scss/bootstrap';
-.debug{
+
+.debug {
     border: 1px solid red;
 }
+
 h1 {
     color: $text-color;
 }
 
-#admin{
+#admin {
     height: 100vh;
     overflow: hidden;
-    display:flex;
+    display: flex;
 }
-header{
-    height: 50px;
-    background-color: aquamarine;
+
+header {
+
+    a {
+        text-decoration: none;
+        color: black;
+        padding: 0px 20px;
+    }
+
+    .header-left {
+        width: 25rem;
+        padding: 5px;
+    }
+
+    .header-right {
+        width: 25rem;
+        padding: 5px;
+    }
+
+    .topbar-divider {
+        width: 0;
+        border-right: 1px solid black;
+        height: 30px;
+        margin: 0px 100px;
+    }
+    .searchbar{
+        border: 1px solid black;
+    }
 }
-#wrapper{
+
+#wrapper {
     flex-grow: 1;
 }
-#sidebar{
+
+#sidebar {
     padding: 10px;
     width: 200px;
     background-color: #4A6FDC;
     color: white;
-    ul{
+
+    ul {
         padding-left: 0px;
         margin-top: 20px;
     }
-    ul li{
+
+    ul li {
         padding: 10px;
     }
-    .logo{
+
+    .logo {
         height: 50px;
         border-bottom: 1px solid white;
+        padding-bottom: 10px;
     }
-    .logo img{
+
+    .logo img {
         width: 30px;
     }
-    a{
+
+    a {
         text-decoration: none;
         color: rgba(255, 255, 255, 0.451);
     }
-    a:hover{
+
+    a:hover {
         color: white;
     }
 }

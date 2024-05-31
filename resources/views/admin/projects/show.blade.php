@@ -2,6 +2,10 @@
 
 @section('content')
 <section class="my-2">
+@if (session()->has('created'))
+    <div class="alert alert-success">{{session()->get('created')}}</div>
+@endif
+
     <h1>{{$project->title}}</h1>
     <hr>
     <div>{{$project->content}}</div>

@@ -35,7 +35,7 @@ class ProjectController extends Controller
         $form_data = $request->all();
         $form_data['slug'] = Project::generateSlug($form_data['title']);
         $new_project = Project::create($form_data);
-        return redirect()->route('admin.projects.show', $new_project->slug);
+        return redirect()->route('admin.projects.show', $new_project->slug)->with('created', $new_project->title . ' è stato aggiunto');
     }
     
 
@@ -74,6 +74,6 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect()->route('admin.projects.index')->with('message', $project->title . ' è stato eliminato');
+        return redirect()->route('admin.projects.index')->with('deleted', $project->title . ' è stato eliminato');
     }
 }

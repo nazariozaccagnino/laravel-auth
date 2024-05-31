@@ -2,8 +2,8 @@
 @section('content')
 <section class="container my-2">
   <h1>My projects</h1>
-  @if(session()->has('message'))
-    <div class="alert alert-danger">{{session()->get('message')}}</div>
+  @if(session()->has('deleted'))
+    <div class="alert alert-danger">{{session()->get('deleted')}}</div>
     @endif
   <table class="table">
     <thead>

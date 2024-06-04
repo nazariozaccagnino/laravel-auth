@@ -35,6 +35,7 @@ class ProjectController extends Controller
         $form_data = $request->all();
         $form_data['slug'] = Project::generateSlug($form_data['title']);
         $new_project = Project::create($form_data);
+        if()
         return redirect()->route('admin.projects.show', $new_project->slug)->with('created', $new_project->title . ' è stato aggiunto');
     }
     

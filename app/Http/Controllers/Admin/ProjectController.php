@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Storage;
 class ProjectController extends Controller
 {
     /**
@@ -34,8 +34,11 @@ class ProjectController extends Controller
         // dd($request);
         $form_data = $request->all();
         $form_data['slug'] = Project::generateSlug($form_data['title']);
+        if($request->hasFile('image')){
+            $path = Storage::put('img_up', $request->image);
+            $form_data['image'] = $path;
+        };
         $new_project = Project::create($form_data);
-        if()
         return redirect()->route('admin.projects.show', $new_project->slug)->with('created', $new_project->title . ' è stato aggiunto');
     }
     

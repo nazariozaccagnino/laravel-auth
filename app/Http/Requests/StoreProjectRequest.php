@@ -23,7 +23,7 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'title' => 'required|unique:projects|max:200|min:3',
-            'content' => 'nullable|max:255',
+            'content' => 'required|max:255',
             'slug' => 'nullable',
             'image' => 'nullable|image|max:255',
         ];
@@ -34,7 +34,10 @@ class StoreProjectRequest extends FormRequest
             'title.required' => 'Il titolo è obbligatorio',
             'title.unique:projects' => 'Il titolo è già presente nel database',
             'title.max' => 'Titolo troppo lungo, inserire massimo :max caratteri',
-            'title.min' => 'Titolo troppo corto, inserire massimo :min caratteri',
+            'title.min' => 'Titolo troppo corto, inserire minimo :min caratteri',
+            'content.required' => 'Il contenuto è obbligatorio',
+            'content.max' => 'Contenuto troppo lungo, inserire massimo :max caratteri',
+            'content.min' => 'Contenuto troppo corto, inserire minimo :min caratteri',
             'image.max' => 'URL troppo lunga, consentiti massimo :max caratteri'
         ];
     }

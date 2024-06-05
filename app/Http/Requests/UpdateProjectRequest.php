@@ -31,7 +31,8 @@ class UpdateProjectRequest extends FormRequest
                 Rule::unique('projects')->ignore($this->project->id),
             ],
             'image' => 'nullable|max:255',
-            'content' => 'nullable'
+            'content' => 'required|max:255',
+
         ];
     }
     public function messages()
@@ -41,6 +42,9 @@ class UpdateProjectRequest extends FormRequest
             'title.unique:projects' => 'Il titolo è già presente nel database',
             'title.max' => 'Titolo troppo lungo, inserire massimo :max caratteri',
             'title.min' => 'Titolo troppo corto, inserire massimo :min caratteri',
+            'content.required' => 'Il contenuto è obbligatorio',
+            'content.max' => 'Contenuto troppo lungo, inserire massimo :max caratteri',
+            'content.min' => 'Contenuto troppo corto, inserire minimo :min caratteri',
             'image.max' => 'URL troppo lunga, consentiti massimo :max caratteri'
         ];
     }

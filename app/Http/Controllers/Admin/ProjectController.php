@@ -6,6 +6,9 @@ use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
+
 class ProjectController extends Controller
 {
     /**
@@ -29,10 +32,10 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, Project $project)
+    public function store(Project $project, StoreProjectRequest $request)
     {
         // dd($request);
-        $form_data = $request->all();
+        $form_data = $request->validated();
         $form_data['slug'] = Project::generateSlug($form_data['title']);
         if($request->hasFile('image')){
             $path = Storage::put('img_up', $request->image);
@@ -62,9 +65,9 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(StoreProjectRequest $request, Project $project)
     {
-        $form_data = $request->all();
+        $form_data = $request->validated();
         if ($project->title !== $form_data['title']) {
             $form_data['slug'] = Project::generateSlug($form_data['title']);
         }
